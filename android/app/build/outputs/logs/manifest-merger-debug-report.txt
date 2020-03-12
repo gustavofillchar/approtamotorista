@@ -1,0 +1,306 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:1-32:12
+MERGED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:1-32:12
+MERGED from [:react-native-maps] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [:react-native-gesture-handler] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-vector-icons] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.61.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/393f113b2420dc3ae06cf7fef52a0864/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:16:1-21:12
+MERGED from [org.webkit:android-jsc:r245459] /home/gustavo/.gradle/caches/transforms-2/files-2.1/1c95ba6eb9c9ef84176b58c0234cdd83/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7b4254d571ab1fda193b33326b265cd1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/b726c229fa654991fbad371ba85910e9/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/a84db18738dc7aa976af3645b4a79f69/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/26e53e2d8e62bf76fae6ba89b456edb9/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9882dc4af717618c18ea091f5ea5f1b3/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5fb1229efa94cf63e9141b85e1fee735/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/214bb1f280e6de09775e571212d22121/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0c615476412176d6de37aa75a64cd5ee/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7126af131ab58cb76020669d1925bda3/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2ea98f2bf6b0021978234e33af2f5a43/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/03401bd49b16f8bafffb7032c8be4f88/AndroidManifest.xml:16:1-23:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5917815110501fee5387abf6f31a8c89/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/6b5d33c3a74d2af157dabeb6d056c168/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/d3bd6dd30baa76ed9a4105d330099230/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0a953a044889af8c25e09e73111b2fb7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3f73886d6202b41250c18f24a5af759e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/573ec98ff19283a6dfc70cf4a148bf80/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/043e648ae3acc585c2fec4af9c62e7bf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9f393ff506ab33498317aa962ffca489/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2890f144c2e22e195f3e7561821eb237/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/c5e08d1363c12ae6040186b7f69dad98/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5c4d59fc294a7b6758878c9fd7f20649/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9a7ff14aa68d7649a351305d5e53b28b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2fc52aa07bec526058db495ff8f74629/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0d4c18102c9a801b46abe5d2d9590c8c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e0a56ea7532a51bc1b6e2eb793710dae/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/bf2289fdcc77a0df39d41c15f183f386/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/4579a401ba88e0b285c92d366633f997/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/48cc3f3d9b30da6802b4a5d62985a9a4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/64492c55a76a404a7cdbb309c281dad1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/743eca071de0e5f8aaf5de6882afd3f3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/1b72c6a0995f2fa6b4c926b35001235f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3279a247e1ead3a692840804f8d11a17/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e080d061bbfc6ce961940017610d7cfe/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e49b4963a5dcfbf8a02490b0dcda13e1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/13aca03fc3f7d46de21745b8756d158b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/a33ea287743baf2f2347133a05c3966e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e2c00ddb6141ba039ab7a7b0be2d3f0c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3df1c5094db2d79a1667b1a93d506612/AndroidManifest.xml:2:1-9:12
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+	package
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:2:3-33
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:2:3-33
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [:react-native-maps] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:react-native-maps] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:4:22-64
+application
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:6:5-30:19
+MERGED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:6:5-30:19
+MERGED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:6:5-30:19
+MERGED from [com.facebook.react:react-native:0.61.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/393f113b2420dc3ae06cf7fef52a0864/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.61.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/393f113b2420dc3ae06cf7fef52a0864/AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:18:5-20:19
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7126af131ab58cb76020669d1925bda3/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7126af131ab58cb76020669d1925bda3/AndroidManifest.xml:11:5-20
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:7:5-11:19
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:7:5-11:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2ea98f2bf6b0021978234e33af2f5a43/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2ea98f2bf6b0021978234e33af2f5a43/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/03401bd49b16f8bafffb7032c8be4f88/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/03401bd49b16f8bafffb7032c8be4f88/AndroidManifest.xml:19:5-21:19
+MERGED from [androidx.core:core:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/bf2289fdcc77a0df39d41c15f183f386/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/bf2289fdcc77a0df39d41c15f183f386/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/4579a401ba88e0b285c92d366633f997/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/4579a401ba88e0b285c92d366633f997/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/bf2289fdcc77a0df39d41c15f183f386/AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:8:7-39
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:8:7-39
+	tools:ignore
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:7:75-114
+	android:roundIcon
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:10:7-52
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:10:7-52
+	tools:targetApi
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:7:54-74
+	android:icon
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:9:7-41
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:9:7-41
+	android:allowBackup
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:11:7-34
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:11:7-34
+	android:theme
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:12:7-38
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:12:7-38
+	android:usesCleartextTraffic
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:7:18-53
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:7:7-38
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:7:7-38
+meta-data#com.google.android.geo.API_KEY
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:13:6-15:63
+	android:value
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:15:6-61
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:14:6-51
+uses-library#org.apache.http.legacy
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:18:4-82
+	android:required
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:18:56-80
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:18:18-55
+activity#com.approtamotorista.MainActivity
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:19:7-28:18
+	android:label
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:21:9-41
+	android:windowSoftInputMode
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:23:9-51
+	android:configChanges
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:22:9-79
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:20:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:24:9-27:25
+action#android.intent.action.MAIN
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:25:13-65
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:25:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:26:13-73
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:26:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:29:7-84
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml:29:17-81
+uses-sdk
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-maps] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-maps] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/393f113b2420dc3ae06cf7fef52a0864/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/393f113b2420dc3ae06cf7fef52a0864/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:17:5-42
+MERGED from [org.webkit:android-jsc:r245459] /home/gustavo/.gradle/caches/transforms-2/files-2.1/1c95ba6eb9c9ef84176b58c0234cdd83/AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] /home/gustavo/.gradle/caches/transforms-2/files-2.1/1c95ba6eb9c9ef84176b58c0234cdd83/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7b4254d571ab1fda193b33326b265cd1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7b4254d571ab1fda193b33326b265cd1/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/b726c229fa654991fbad371ba85910e9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/b726c229fa654991fbad371ba85910e9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/a84db18738dc7aa976af3645b4a79f69/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/a84db18738dc7aa976af3645b4a79f69/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/26e53e2d8e62bf76fae6ba89b456edb9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/26e53e2d8e62bf76fae6ba89b456edb9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9882dc4af717618c18ea091f5ea5f1b3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9882dc4af717618c18ea091f5ea5f1b3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5fb1229efa94cf63e9141b85e1fee735/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5fb1229efa94cf63e9141b85e1fee735/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/214bb1f280e6de09775e571212d22121/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/214bb1f280e6de09775e571212d22121/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0c615476412176d6de37aa75a64cd5ee/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0c615476412176d6de37aa75a64cd5ee/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7126af131ab58cb76020669d1925bda3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/7126af131ab58cb76020669d1925bda3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:5:5-43
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2ea98f2bf6b0021978234e33af2f5a43/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2ea98f2bf6b0021978234e33af2f5a43/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/03401bd49b16f8bafffb7032c8be4f88/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/03401bd49b16f8bafffb7032c8be4f88/AndroidManifest.xml:17:5-42
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5917815110501fee5387abf6f31a8c89/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5917815110501fee5387abf6f31a8c89/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/6b5d33c3a74d2af157dabeb6d056c168/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/6b5d33c3a74d2af157dabeb6d056c168/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/d3bd6dd30baa76ed9a4105d330099230/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/d3bd6dd30baa76ed9a4105d330099230/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0a953a044889af8c25e09e73111b2fb7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0a953a044889af8c25e09e73111b2fb7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3f73886d6202b41250c18f24a5af759e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3f73886d6202b41250c18f24a5af759e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/573ec98ff19283a6dfc70cf4a148bf80/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/573ec98ff19283a6dfc70cf4a148bf80/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/043e648ae3acc585c2fec4af9c62e7bf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/043e648ae3acc585c2fec4af9c62e7bf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9f393ff506ab33498317aa962ffca489/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9f393ff506ab33498317aa962ffca489/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2890f144c2e22e195f3e7561821eb237/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2890f144c2e22e195f3e7561821eb237/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/c5e08d1363c12ae6040186b7f69dad98/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/c5e08d1363c12ae6040186b7f69dad98/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5c4d59fc294a7b6758878c9fd7f20649/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/5c4d59fc294a7b6758878c9fd7f20649/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9a7ff14aa68d7649a351305d5e53b28b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/9a7ff14aa68d7649a351305d5e53b28b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2fc52aa07bec526058db495ff8f74629/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/2fc52aa07bec526058db495ff8f74629/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0d4c18102c9a801b46abe5d2d9590c8c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/0d4c18102c9a801b46abe5d2d9590c8c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e0a56ea7532a51bc1b6e2eb793710dae/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e0a56ea7532a51bc1b6e2eb793710dae/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/bf2289fdcc77a0df39d41c15f183f386/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/bf2289fdcc77a0df39d41c15f183f386/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/4579a401ba88e0b285c92d366633f997/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/4579a401ba88e0b285c92d366633f997/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/48cc3f3d9b30da6802b4a5d62985a9a4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/48cc3f3d9b30da6802b4a5d62985a9a4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/64492c55a76a404a7cdbb309c281dad1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/64492c55a76a404a7cdbb309c281dad1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/743eca071de0e5f8aaf5de6882afd3f3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/743eca071de0e5f8aaf5de6882afd3f3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/1b72c6a0995f2fa6b4c926b35001235f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/1b72c6a0995f2fa6b4c926b35001235f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3279a247e1ead3a692840804f8d11a17/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3279a247e1ead3a692840804f8d11a17/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e080d061bbfc6ce961940017610d7cfe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e080d061bbfc6ce961940017610d7cfe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e49b4963a5dcfbf8a02490b0dcda13e1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e49b4963a5dcfbf8a02490b0dcda13e1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/13aca03fc3f7d46de21745b8756d158b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/13aca03fc3f7d46de21745b8756d158b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/a33ea287743baf2f2347133a05c3966e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/a33ea287743baf2f2347133a05c3966e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e2c00ddb6141ba039ab7a7b0be2d3f0c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/e2c00ddb6141ba039ab7a7b0be2d3f0c/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3df1c5094db2d79a1667b1a93d506612/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/gustavo/.gradle/caches/transforms-2/files-2.1/3df1c5094db2d79a1667b1a93d506612/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /home/gustavo/jubartelabs/dev/AppRotaMotorista/android/app/src/debug/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [:react-native-maps] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from [:react-native-maps] /home/gustavo/jubartelabs/dev/AppRotaMotorista/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:19:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/353440ebbda3a5598b46cf0cf4f411cb/AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/54da8684957d62e2ba6a28f1d21f03c0/AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:8:9-10:69
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/03401bd49b16f8bafffb7032c8be4f88/AndroidManifest.xml:20:9-121
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /home/gustavo/.gradle/caches/transforms-2/files-2.1/03401bd49b16f8bafffb7032c8be4f88/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:10:13-66
+	android:name
+		ADDED from [com.google.maps.android:android-maps-utils:0.5] /home/gustavo/.gradle/caches/transforms-2/files-2.1/8cce7aa459c822d58f2da3f69c64c4bf/AndroidManifest.xml:9:13-58
