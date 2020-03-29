@@ -60,3 +60,30 @@ export const SubmitButton = styled.TouchableOpacity`
   padding: 15px;
   border-radius: 5px;
 `;
+
+export const AddPhotoText = styled.Text`
+  color: #d32f2f;
+  font-size: 16px;
+  margin-left: 20px;
+  font-weight: 700;
+`;
+
+export const AddPhoto = styled.TouchableOpacity`
+  border-color: #d32f2f;
+  border-width: 1px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin: 0 0 15px 0;
+  flex-direction: row;
+  border-radius: 5px;
+`;
+
+export const PreviewCNH = styled.Image.attrs({
+  resizeMode: 'cover',
+})`
+  height: 200px;
+  width: 100%;
+  margin: 0 0 15px 0;
+  border-radius: 5px;
+`;

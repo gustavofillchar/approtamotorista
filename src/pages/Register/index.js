@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {StatusBar} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import ImagePicker from 'react-native-image-crop-picker';
 
 import {
   Container,
@@ -14,6 +16,9 @@ import {
   ItemForm,
   SubmitText,
   SubmitButton,
+  AddPhoto,
+  AddPhotoText,
+  PreviewCNH,
 } from './styles';
 
 const FormItemInput = ({labelname, sample, secure}) => {
@@ -30,6 +35,18 @@ const FormItemInput = ({labelname, sample, secure}) => {
 };
 
 export default function Register({navigation}) {
+  const [image, setImage] = useState();
+
+  function openCamera() {
+    ImagePicker.openCamera({
+      width: 300,
+      height: 400,
+    }).then(image => {
+      console.log(image);
+      setImage(image);
+    });
+  }
+
   return (
     <Container>
       <StatusBar backgroundColor="#212121" />
@@ -81,6 +98,14 @@ export default function Register({navigation}) {
           sample="***********"
           secure={true}
         />
+        {image ? <PreviewCNH source={{uri: image.path}} /> : null}
+        <AddPhoto activeOpacity={0.8} onPress={() => openCamera()}>
+          <Icon name="camera" size={20} color="#d32f2f" />
+          <AddPhotoText>
+            {!image ? 'Fotografar CNH' : 'Fotografar novamente'}
+          </AddPhotoText>
+        </AddPhoto>
+
         <SubmitButton activeOpacity={0.8}>
           <SubmitText>Cadastrar</SubmitText>
         </SubmitButton>
