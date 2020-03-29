@@ -1,31 +1,27 @@
-.ContainerInfo {
-  flex: 1;
-}
+import styled from 'styled-components/native';
 
-.Container {
+export const ContainerInfo = styled.ScrollView`
   flex: 1;
-  display: flex;
-}
+`;
 
-.MapBox {
-  /* display: flex; */
+export const Container = styled.View`
+  flex: 1;
+`;
+
+export const MapBox = styled.View`
   background-color: #888;
   height: 250px;
-  width: 100%;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  color: red;
-}
+`;
 
-.Title {
-  display: flex;
+export const Title = styled.Text`
   font-size: 22px;
   color: #999;
   font-weight: 700;
-}
+`;
 
-.Info {
-  display: flex;
+export const Info = styled.View`
   font-size: 22px;
   margin: 15px 15px 5px 15px;
   padding: 8px;
@@ -33,30 +29,26 @@
   justify-content: center;
   border-radius: 200px;
   border: solid #ddd 2px;
-}
+`;
 
-.BoxTripDetail {
-  display: flex;
+export const BoxTripDetail = styled.View`
   margin: 15px 20px 0 20px;
   flex-direction: row;
   align-items: center;
-}
+`;
 
-.DescriptTitle {
-  display: flex;
+export const DescriptTitle = styled.Text`
   font-size: 18px;
   font-weight: 700;
   margin-left: 10px;
   color: #555;
-}
+`;
 
-.InfoDescriptText {
+export const InfoDescriptText = styled.Text`
   font-size: 18px;
-  display: flex;
-}
+`;
 
-.InfoBoxDescript {
-  display: flex;
+export const InfoBoxDescript = styled.View`
   margin: 10px 15px 0 15px;
   padding: 5px;
   border-radius: 100px;
@@ -64,27 +56,24 @@
   background-color: #eceff1;
   align-items: center;
   justify-content: center;
-}
+`;
 
-.Separator {
-  display: flex;
+export const Separator = styled.View`
   height: 1px;
   background-color: #ddd;
   margin: 20px 20px 0 20px;
-}
+`;
 
-.CloseBox {
-  display: flex;
+export const CloseBox = styled.TouchableOpacity`
   background-color: #2196f3;
   justify-content: center;
   align-items: center;
   padding: 15px;
   margin: 15px;
   border-radius: 150px;
-}
+`;
 
-.CloseTitle {
-  display: flex;
+export const CloseTitle = styled.Text`
   color: #fff;
   font-size: 16px;
-}
+`;
