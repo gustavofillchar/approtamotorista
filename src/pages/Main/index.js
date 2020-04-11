@@ -85,7 +85,7 @@ export default function Main({navigation}) {
           <InfoDescriptText>6 alunos</InfoDescriptText>
         </InfoBoxDescript>
 
-        <CloseBox>
+        <CloseBox onPress={() => navigation.navigate('Login')}>
           <CloseTitle>Fechar</CloseTitle>
         </CloseBox>
       </ContainerInfo>

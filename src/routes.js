@@ -5,6 +5,7 @@ import Main from '~/pages/Main';
 import Register from '~/pages/Register';
 import VehicleRegister from '~/pages/VehicleRegister';
 import TestRoutes from '~/pages/TestRoutes';
+import Login from '~/pages/Login';
 
 const Routes = createAppContainer(
   createStackNavigator(
@@ -19,11 +20,17 @@ const Routes = createAppContainer(
           headerTintColor: '#fff',
         },
       },
+      Login: {
+        screen: Login,
+        navigationOptions: {
+          headerShown: false,
+        },
+      },
       Register: {
         screen: Register,
         navigationOptions: {
           headerStyle: {
-            backgroundColor: '#212121',
+            backgroundColor: '#C10C19',
           },
           headerTitle: 'Cadastro do Motorista',
           headerTintColor: '#fff',
@@ -33,7 +40,7 @@ const Routes = createAppContainer(
         screen: VehicleRegister,
         navigationOptions: {
           headerStyle: {
-            backgroundColor: '#212121',
+            backgroundColor: '#C10C19',
           },
           headerTitle: 'Cadastro do Veículo',
           headerTintColor: '#fff',
@@ -43,7 +50,7 @@ const Routes = createAppContainer(
         screen: Main,
         navigationOptions: {
           headerStyle: {
-            backgroundColor: '#212121',
+            backgroundColor: '#C10C19',
           },
           headerTitle: 'Resumo da Viagem',
           headerTintColor: '#fff',
@@ -52,7 +59,7 @@ const Routes = createAppContainer(
     },
 
     {
-      initialRouteName: 'TestRoutes',
+      initialRouteName: 'Login',
       defaultNavigationOptions: {
         headerBackTitle: 'Voltar',
         headerTruncatedBackTitle: 'Voltar',

@@ -32,12 +32,12 @@ const FormItemInput = ({labelname, sample, secure}) => {
 export default function VehicleRegister({navigation}) {
   return (
     <Container>
-      <StatusBar backgroundColor="#212121" />
+      <StatusBar backgroundColor="#C10C19" />
 
       <Icon
         name="van-passenger"
-        size={60}
-        color="#FFD54F"
+        size={50}
+        color="#fff"
         style={{alignSelf: 'center', marginBottom: 15}}
       />
 
@@ -49,7 +49,9 @@ export default function VehicleRegister({navigation}) {
         <FormItemInput labelname="Ano de Fabricação" sample="Ex.: Kombi" />
         <FormItemInput labelname="Capacidade de passageiros" sample="Ex.: 13" />
 
-        <SubmitButton activeOpacity={0.8}>
+        <SubmitButton
+          activeOpacity={0.8}
+          onPress={() => navigation.navigate('Main')}>
           <SubmitText>Cadastrar</SubmitText>
         </SubmitButton>
       </Form>

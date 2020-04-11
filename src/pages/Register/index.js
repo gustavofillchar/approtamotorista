@@ -49,11 +49,11 @@ export default function Register({navigation}) {
 
   return (
     <Container>
-      <StatusBar backgroundColor="#212121" />
+      <StatusBar barStyle="light-content" backgroundColor="#C10C19" />
       <Icon
         name="drivers-license"
-        size={50}
-        color="#FFD54F"
+        size={40}
+        color="#fff"
         style={{alignSelf: 'center', marginBottom: 15}}
       />
 
@@ -106,7 +106,9 @@ export default function Register({navigation}) {
           </AddPhotoText>
         </AddPhoto>
 
-        <SubmitButton activeOpacity={0.8}>
+        <SubmitButton
+          onPress={() => navigation.navigate('VehicleRegister')}
+          activeOpacity={0.8}>
           <SubmitText>Cadastrar</SubmitText>
         </SubmitButton>
       </Form>
