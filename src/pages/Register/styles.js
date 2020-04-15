@@ -6,6 +6,19 @@ export const Container = styled.ScrollView`
   padding: 20px;
 `;
 
+export const ContainerProfile = styled.View`
+  align-self: center;
+  margin: 0 0 15px 0;
+`;
+
+export const InformText = styled.Text`
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #d32f2f;
+  padding: 0 10px;
+`;
+
 export const FormInput = styled.View`
   flex-direction: row;
   width: 100%;
