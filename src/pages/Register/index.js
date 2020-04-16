@@ -6,18 +6,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import api from '~/services/api';
 
-import ImagePicker from 'react-native-image-crop-picker';
-
 import {Picker} from '@react-native-community/picker';
 
 import {
   Container,
-  FormInput,
-  FieldText,
   Form,
-  FormLabel,
-  LabelText,
-  ItemForm,
   SubmitText,
   SubmitButton,
   AddPhoto,
@@ -28,6 +21,8 @@ import {
 } from './styles';
 
 import PhotoPreview from '../../components/PhotoPreview';
+import openCamera from '~/utils/open-camera';
+import ItemForm from '~/components/ItemForm';
 
 export default function Register({navigation}) {
   const [image, setImage] = useState();
@@ -62,7 +57,6 @@ export default function Register({navigation}) {
     api
       .get('general/prefectures')
       .then(async response => {
-        console.log(response.data);
         setPrefectureInfo(response.data);
         // setHasPrefecture(true);
       })
@@ -82,14 +76,56 @@ export default function Register({navigation}) {
     }
   }, [hasPrefecture, idPrefectureSelected, prefectureInfo]);
 
-  function openCamera() {
-    ImagePicker.openCamera({
-      width: 300,
-      height: 400,
-    }).then(image => {
-      console.log(image);
-      setImage(image);
+  function buildFormData() {
+    const formData = new FormData();
+    formData.append('prefecture_id', idPrefectureSelected);
+    formData.append('name', name);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    formData.append('document', document);
+    formData.append('driver_license', driverLicense);
+    formData.append('driver_license_image', driverLicenseImage);
+    formData.append('image_license', imageLicense);
+    formData.append('address', address);
+    formData.append('number', number);
+    formData.append('uf', uf);
+    formData.append('city', city);
+    formData.append('zip_code', zipCode);
+    formData.append('board', board);
+    formData.append('renavam', renavam);
+    formData.append('year_manufacture', yearManufacture);
+    formData.append('year_model', yearModel);
+    formData.append('passengers', passengers);
+    formData.append('player_id', playerId);
+    formData.append('password', password);
+    formData.append('password_confirmation', passwordConfirmation);
+    formData.append('vehicle_model_id', vehicleModelId);
+    // formData.append('brand_model_id', brand)
+    return formData;
+  }
+
+  async function takeLicenseImage() {
+    const imageTaken = await openCamera();
+    setImageLicense({
+      uri: imageTaken.path,
+      type: imageTaken.mime,
+      filename: imageTaken.filename,
     });
+    setDriverLicenseImage({
+      uri: imageTaken.path,
+      type: imageTaken.mime,
+      filename: imageTaken.filename,
+    });
+  }
+
+  async function register() {
+    const formData = buildFormData();
+    try {
+      await api.post('/general/driver/register', formData);
+      navigation.navigate('Main');
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -124,6 +160,7 @@ export default function Register({navigation}) {
             {prefectureInfo?.data.map(data => {
               return (
                 <Picker.Item
+                  key={data.id}
                   label={data.city + ', ' + data.uf}
                   value={data.user_id}
                 />
@@ -133,7 +170,7 @@ export default function Register({navigation}) {
           </Picker>
           <SubmitButton
             onPress={() => {
-              if (idPrefectureSelected != 0) {
+              if (idPrefectureSelected !== 0) {
                 setHasPrefecture(true);
               } else {
                 alert('Selecione a cidade.');
@@ -148,166 +185,131 @@ export default function Register({navigation}) {
       {hasPrefecture ? (
         <>
           <Form>
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Nome</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="Digite seu nome"
-                  value={name}
-                  onChangeText={text => setName(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Nome"
+              placeholder="Digite seu nome"
+              value={name}
+              onChangeText={setName}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Endereço</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="Ex.: Rua Novo Horizonte, Centro"
-                  value={address}
-                  onChangeText={text => setAddress(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Email"
+              placeholder="Digite seu email"
+              value={email}
+              onChangeText={setEmail}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Número</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="140"
-                  value={number}
-                  onChangeText={text => setNumber(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Telefone"
+              placeholder="Digite seu telefone"
+              value={phone}
+              onChangeText={setPhone}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Cidade</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText placeholder="" value={city} editable={false} />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Documento"
+              placeholder="Digite seu CPF"
+              value={document}
+              onChangeText={setDocument}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>UF</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText placeholder="" value={uf} editable={false} />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Endereço"
+              placeholder="Ex.: Rua Novo Horizonte, Centro"
+              value={address}
+              onChangeText={setAddress}
+            />
+            <ItemForm
+              label="Número"
+              placeholder="140"
+              value={number}
+              onChangeText={setNumber}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>CEP</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="Insira seu CEP"
-                  value={zipCode}
-                  onChangeText={text => setZipCode(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Cidade"
+              placeholder=""
+              value={city}
+              editable={false}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Placa do Veículo</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="XXX-0000"
-                  value={board}
-                  onChangeText={text => setBoard(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="UF"
+              placeholder="140"
+              value={uf}
+              onChangeText={setNumber}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Ano Fabricação</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="Ex.: 2014"
-                  value={yearManufacture}
-                  onChangeText={text => setYearManufacture(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="CEP"
+              placeholder="Insira seu CEP"
+              value={zipCode}
+              onChangeText={setZipCode}
+            />
+            <ItemForm
+              label="Carteira de Motorista"
+              placeholder="Informe sua carteira"
+              value={driverLicense}
+              onChangeText={driverLicense}
+            />
+            <ItemForm
+              label="Placa do Veículo"
+              placeholder="XXX-0000"
+              value={board}
+              onChangeText={setBoard}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Ano Modelo</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="Ex.: 2015"
-                  value={yearModel}
-                  onChangeText={text => setYearModel(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Renavam"
+              placeholder="Ex.: 123456789"
+              value={renavam}
+              onChangeText={setRenavam}
+            />
+            <ItemForm
+              label="Ano Fabricação"
+              placeholder="Ex.: 2014"
+              value={yearManufacture}
+              onChangeText={setYearManufacture}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Quantidade Passageiros</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="Ex: 15"
-                  value={passengers}
-                  onChangeText={text => setPassengers(text)}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Ano Modelo"
+              placeholder="Ex.: 2015"
+              value={yearModel}
+              onChangeText={setYearModel}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Senha</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="********"
-                  value={password}
-                  onChangeText={text => setPassword(text)}
-                  secureTextEntry={true}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Quantidade Passageiros"
+              placeholder="Ex: 15"
+              value={passengers}
+              onChangeText={setPassengers}
+            />
 
-            <ItemForm>
-              <FormLabel>
-                <LabelText>Confirmar Senha</LabelText>
-              </FormLabel>
-              <FormInput>
-                <FieldText
-                  placeholder="********"
-                  value={passwordConfirmation}
-                  onChangeText={text => setPasswordConfirmation(text)}
-                  secureTextEntry={true}
-                />
-              </FormInput>
-            </ItemForm>
+            <ItemForm
+              label="Senha"
+              placeholder="********"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry={true}
+            />
+
+            <ItemForm
+              label="Confirmar Senha"
+              placeholder="********"
+              value={passwordConfirmation}
+              onChangeText={setPasswordConfirmation}
+              secureTextEntry={true}
+            />
 
             {image ? <PreviewCNH source={{uri: image.path}} /> : null}
-            <AddPhoto activeOpacity={0.8} onPress={() => openCamera()}>
+            <AddPhoto activeOpacity={0.8} onPress={() => takeLicenseImage()}>
               <Icon name="camera" size={20} color="#d32f2f" />
               <AddPhotoText>
                 {!image ? 'Fotografar CNH' : 'Fotografar novamente'}
               </AddPhotoText>
             </AddPhoto>
-            <SubmitButton
-              onPress={() => navigation.navigate('VehicleRegister')}
-              activeOpacity={0.8}>
+            <SubmitButton onPress={() => register()} activeOpacity={0.8}>
               <SubmitText>Cadastrar</SubmitText>
             </SubmitButton>
           </Form>
