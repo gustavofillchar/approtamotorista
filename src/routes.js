@@ -6,6 +6,7 @@ import Register from '~/pages/Register';
 import VehicleRegister from '~/pages/VehicleRegister';
 import TestRoutes from '~/pages/TestRoutes';
 import Login from '~/pages/Login';
+import CheckAuth from './pages/CheckAuth';
 
 const Routes = createAppContainer(
   createStackNavigator(
@@ -56,10 +57,16 @@ const Routes = createAppContainer(
           headerTintColor: '#fff',
         },
       },
+      CheckAuth: {
+        screen: CheckAuth,
+        navigationOptions: {
+          headerShown: false,
+        },
+      },
     },
 
     {
-      initialRouteName: 'Login',
+      initialRouteName: 'CheckAuth',
       defaultNavigationOptions: {
         headerBackTitle: 'Voltar',
         headerTruncatedBackTitle: 'Voltar',

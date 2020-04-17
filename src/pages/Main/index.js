@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {
   Container,
@@ -16,10 +16,37 @@ import {
 } from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MapView from 'react-native-maps';
+import api from '~/services/api';
+import {getTokenFromStorage} from '~/storage/auth';
+import {storeUserDataInStorage, getUserDataFromStorage} from '~/storage/user';
+import {Text} from 'react-native';
 
 export default function Main({navigation}) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    async function prepareUserData() {
+      const previousUserData = await getUserDataFromStorage();
+      if (!previousUserData) {
+        const token = await getTokenFromStorage();
+        const {data} = await api.get('/driver', {
+          headers: {
+            Authorization: `bearer ${token}`,
+          },
+        });
+        console.log(data);
+        await storeUserDataInStorage(data);
+        setUser(data);
+      } else {
+        setUser(previousUserData);
+      }
+    }
+    prepareUserData();
+  }, []);
+
   return (
     <Container>
+      <Text>{user?.driver?.name}</Text>
       <MapBox>
         <MapView
           region={{

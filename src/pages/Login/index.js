@@ -1,8 +1,8 @@
 import React, {useState, useCallback, useEffect} from 'react';
-import {View, Text, StatusBar, ActivityIndicator} from 'react-native';
+import {View, Text, StatusBar, ActivityIndicator, Alert} from 'react-native';
 import MDIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import api from '~/services/api';
-import AsyncStorage from '@react-native-community/async-storage';
+
 import {
   Container,
   ContainerForm,
@@ -18,6 +18,8 @@ import {
 
 import logoapp from '../../assets/logoapp.png';
 import wp from '../../assets/van.jpg';
+import {storeUserDataInStorage} from '~/storage/user';
+import {storeTokenInStorage} from '~/storage/auth';
 
 export default function Login({navigation}) {
   const [userName, setUserName] = useState(''); // input do usuario
@@ -41,16 +43,14 @@ export default function Login({navigation}) {
         password: password,
       })
       .then(async response => {
-        await AsyncStorage.setItem('USER_DATA', JSON.stringify(response.data));
-        const user = JSON.parse(await AsyncStorage.getItem('USER_DATA')) || {};
-        navigation.replace('Main', {user});
+        await storeTokenInStorage(response.data.access_token);
+        navigation.replace('Main', {user: response.data});
         setUserName('');
         setPassword('');
-        console.log(response.data);
       })
       .catch(error => {
         console.log(error);
-        alert(error.message);
+        Alert.alert('Erro', error.message);
         setHasError(true);
         setLogging(false);
       });
