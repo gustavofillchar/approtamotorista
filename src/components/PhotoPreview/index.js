@@ -42,7 +42,7 @@ function PhotoPreview(
 
   function getSourceImage() {
     if (!photoPreview) {
-      return require('~/assets/default-user.png');
+      return require('~/assets/default-user.jpg');
     }
     return photoPreview;
   }

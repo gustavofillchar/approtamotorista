@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-import {StatusBar, ActivityIndicator} from 'react-native';
+import {StatusBar, ActivityIndicator, Alert} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -25,6 +25,7 @@ import openCamera from '~/utils/open-camera';
 import ItemForm from '~/components/ItemForm';
 
 export default function Register({navigation}) {
+  const [setting, setSetting] = useState(false);
   const [image, setImage] = useState();
 
   const [hasPrefecture, setHasPrefecture] = useState(false);
@@ -51,7 +52,7 @@ export default function Register({navigation}) {
   const [playerId, setPlayerId] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  const [vehicleModelId, setVehicleModelId] = useState('');
+  const [vehicleModelId, setVehicleModelId] = useState(1);
 
   useEffect(() => {
     api
@@ -68,7 +69,7 @@ export default function Register({navigation}) {
   useEffect(() => {
     if (hasPrefecture) {
       prefectureInfo?.data.map(data => {
-        if (data.user_id === idPrefectureSelected) {
+        if (data.id === idPrefectureSelected) {
           setCity(data.city);
           setUf(data.uf);
         }
@@ -77,6 +78,8 @@ export default function Register({navigation}) {
   }, [hasPrefecture, idPrefectureSelected, prefectureInfo]);
 
   function buildFormData() {
+    console.log(driverLicenseImage);
+    console.log(imageLicense);
     const formData = new FormData();
     formData.append('prefecture_id', idPrefectureSelected);
     formData.append('name', name);
@@ -96,7 +99,7 @@ export default function Register({navigation}) {
     formData.append('year_manufacture', yearManufacture);
     formData.append('year_model', yearModel);
     formData.append('passengers', passengers);
-    formData.append('player_id', playerId);
+    formData.append('player_id', 'one_id');
     formData.append('password', password);
     formData.append('password_confirmation', passwordConfirmation);
     formData.append('vehicle_model_id', vehicleModelId);
@@ -109,22 +112,25 @@ export default function Register({navigation}) {
     setImageLicense({
       uri: imageTaken.path,
       type: imageTaken.mime,
-      filename: imageTaken.filename,
+      name: imageTaken.path.split('/').pop(),
     });
     setDriverLicenseImage({
       uri: imageTaken.path,
       type: imageTaken.mime,
-      filename: imageTaken.filename,
+      name: imageTaken.path.split('/').pop(),
     });
   }
 
   async function register() {
+    setSetting(true);
     const formData = buildFormData();
     try {
       await api.post('/general/driver/register', formData);
-      navigation.navigate('Main');
+      Alert.alert('Aviso', 'Motorista cadastrado com sucesso');
     } catch (error) {
       console.log(error);
+    } finally {
+      setSetting(false);
     }
   }
 
@@ -154,6 +160,7 @@ export default function Register({navigation}) {
             mode="dialog"
             selectedValue={idPrefectureSelected}
             onValueChange={(itemValue, itemIndex) => {
+              console.log(itemValue);
               setIdPrefectureSelected(itemValue);
             }}>
             <Picker.Item label="Escolha uma cidade..." value={0} />
@@ -162,7 +169,7 @@ export default function Register({navigation}) {
                 <Picker.Item
                   key={data.id}
                   label={data.city + ', ' + data.uf}
-                  value={data.user_id}
+                  value={data.id}
                 />
               );
               // console.log('rei');
@@ -226,19 +233,9 @@ export default function Register({navigation}) {
               onChangeText={setNumber}
             />
 
-            <ItemForm
-              label="Cidade"
-              placeholder=""
-              value={city}
-              editable={false}
-            />
+            <ItemForm label="Cidade" value={city} editable={false} />
 
-            <ItemForm
-              label="UF"
-              placeholder="140"
-              value={uf}
-              onChangeText={setNumber}
-            />
+            <ItemForm label="UF" placeholder="140" value={uf} />
 
             <ItemForm
               label="CEP"
@@ -250,7 +247,7 @@ export default function Register({navigation}) {
               label="Carteira de Motorista"
               placeholder="Informe sua carteira"
               value={driverLicense}
-              onChangeText={driverLicense}
+              onChangeText={setDriverLicense}
             />
             <ItemForm
               label="Placa do Veículo"
@@ -310,7 +307,11 @@ export default function Register({navigation}) {
               </AddPhotoText>
             </AddPhoto>
             <SubmitButton onPress={() => register()} activeOpacity={0.8}>
-              <SubmitText>Cadastrar</SubmitText>
+              {setting ? (
+                <ActivityIndicator size={30} color="#fff" />
+              ) : (
+                <SubmitText>Cadastrar</SubmitText>
+              )}
             </SubmitButton>
           </Form>
         </>
