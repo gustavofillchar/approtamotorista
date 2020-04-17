@@ -15,26 +15,25 @@ import {
   ContainerInfo,
 } from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import MapView from 'react-native-maps';
-import api from '~/services/api';
-import {getTokenFromStorage} from '~/storage/auth';
+import MapView, {Marker} from 'react-native-maps';
+import {fetchUserData} from '~/services/api';
 import {storeUserDataInStorage, getUserDataFromStorage} from '~/storage/user';
-import {Text} from 'react-native';
+import {getCurrentLocation} from '~/utils/geolocation';
+import {ActivityIndicator} from 'react-native';
 
 export default function Main({navigation}) {
   const [user, setUser] = useState(null);
+  const [currentLocation, setCurrentLocation] = useState(null);
 
   useEffect(() => {
+    async function getUserLocation() {
+      const position = await getCurrentLocation();
+      setCurrentLocation(position);
+    }
     async function prepareUserData() {
       const previousUserData = await getUserDataFromStorage();
       if (!previousUserData) {
-        const token = await getTokenFromStorage();
-        const {data} = await api.get('/driver', {
-          headers: {
-            Authorization: `bearer ${token}`,
-          },
-        });
-        console.log(data);
+        const data = await fetchUserData();
         await storeUserDataInStorage(data);
         setUser(data);
       } else {
@@ -42,21 +41,26 @@ export default function Main({navigation}) {
       }
     }
     prepareUserData();
+    getUserLocation();
   }, []);
 
   return (
     <Container>
-      <Text>{user?.driver?.name}</Text>
       <MapBox>
-        <MapView
-          region={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-          style={{height: '100%', width: '100%'}}
-        />
+        {currentLocation ? (
+          <MapView
+            region={{
+              latitude: currentLocation.latitude,
+              longitude: currentLocation.longitude,
+              latitudeDelta: 0.0102,
+              longitudeDelta: 0.0102,
+            }}
+            style={{height: '100%', width: '100%'}}>
+            <Marker title="Sua posição atual" coordinate={currentLocation} />
+          </MapView>
+        ) : (
+          <ActivityIndicator size={20} />
+        )}
       </MapBox>
 
       <ContainerInfo>
