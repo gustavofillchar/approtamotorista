@@ -11,6 +11,7 @@ import {ROUTE_STATUS} from '~/utils/contants';
 import ActivedRoute from './ActivedRoute';
 import RouteResult from './RouteResult';
 import Map from './Map';
+import {storeRouteInStorage} from '~/storage/routes';
 
 export default function Main({navigation}) {
   const [user, setUser] = useState(null);
@@ -62,12 +63,15 @@ export default function Main({navigation}) {
     setRouteStatus(ROUTE_STATUS.DESACTIVED);
   }, []);
 
-  const finalizeRoute = useCallback(finalPosition => {
-    console.tron('FINAL POSITION: ', finalPosition);
-    setRoute(prevState => ({...prevState, finalPosition}));
-    stopPositionListener(listenerPositionId.current);
-    setRouteStatus(ROUTE_STATUS.FINALIZED);
-  }, []);
+  const finalizeRoute = useCallback(
+    async finalPosition => {
+      console.tron('FINAL POSITION: ', finalPosition);
+      await storeRouteInStorage({...route, finalPosition});
+      stopPositionListener(listenerPositionId.current);
+      setRouteStatus(ROUTE_STATUS.FINALIZED);
+    },
+    [route],
+  );
 
   const closeResultRoute = useCallback(() => {
     setRouteStatus(ROUTE_STATUS.DESACTIVED);

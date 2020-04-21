@@ -6,12 +6,14 @@ export async function getRoutesFromStorage() {
 }
 
 export async function storeRouteInStorage(route) {
-  const previousRoutes = await getRoutesFromStorage();
-  previousRoutes[route.id] = route;
+  const previousRoutes = JSON.parse(await AsyncStorage.getItem('routes')) || {};
+  console.tron('ROUTE: ', route);
+  previousRoutes[route.id.toString()] = route;
+  console.tron('STOREROUTE: ', previousRoutes);
   await AsyncStorage.setItem('routes', JSON.stringify(previousRoutes));
 }
 
 export async function getEspecificRouteFromStorage(routeId) {
-  const routes = await getRoutesFromStorage();
-  return routes[routeId];
+  const routes = JSON.parse(await AsyncStorage.getItem('routes')) || {};
+  return routes[routeId.toString()];
 }

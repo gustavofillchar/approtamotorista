@@ -19,9 +19,9 @@ export default function Map({location, route, status}) {
       </Marker>
       {status === ROUTE_STATUS.ACTIVED && (
         <>
-          {route.stops.map(stop => {
+          {route.stops.map((stop, index) => {
             return (
-              <Marker title="Sua posição atual" coordinate={stop.coords}>
+              <Marker key={index.toString()} title="Sua posição atual" coordinate={stop.coords}>
                 <Image source={require('~/assets/stop-sign.png')} style={{width: 20, height: 20}} />
               </Marker>
             );
