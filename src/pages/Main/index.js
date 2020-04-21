@@ -68,6 +68,7 @@ export default function Main({navigation}) {
       console.tron('FINAL POSITION: ', finalPosition);
       await storeRouteInStorage({...route, finalPosition});
       stopPositionListener(listenerPositionId.current);
+      setRoute(null);
       setRouteStatus(ROUTE_STATUS.FINALIZED);
     },
     [route],
@@ -85,13 +86,17 @@ export default function Main({navigation}) {
     }));
   }, []);
 
+  const handleRouteSelection = useCallback(routeSelected => {
+    setRoute(routeSelected);
+  }, []);
+
   const renderContent = useCallback(() => {
     if (routeStatus === ROUTE_STATUS.ACTIVED) {
       return (
         <ActivedRoute route={route} onCancelRoute={cancelRoute} onFinalizeRoute={finalizeRoute} onMarkStop={markStop} />
       );
     } else if (routeStatus === ROUTE_STATUS.DESACTIVED) {
-      return <InitRoute onInitRoute={startRoute} />;
+      return <InitRoute onInitRoute={startRoute} onRouteSelect={handleRouteSelection} />;
     } else {
       return <RouteResult onClose={closeResultRoute} />;
     }

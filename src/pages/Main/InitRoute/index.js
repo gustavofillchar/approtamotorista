@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {Container} from './styles';
 import {Button, Text} from 'react-native';
 import {getRoutesFromStorage} from '~/storage/routes';
+import RoutesList from './RoutesList';
 
-export default function InitRoute({onInitRoute}) {
+export default function InitRoute({onInitRoute, onRouteSelect}) {
   const [routes, setRoutes] = useState();
 
   useEffect(() => {
@@ -14,9 +15,16 @@ export default function InitRoute({onInitRoute}) {
     preparePreviousRoutes();
   }, []);
 
+  const handleRoutePress = useCallback(
+    route => {
+      onRouteSelect(route);
+    },
+    [onRouteSelect],
+  );
+
   return (
     <Container>
-      <Text>{JSON.stringify(routes, null, 4)}</Text>
+      <RoutesList routes={routes} onRoutePress={handleRoutePress} />
       <Button title="Iniciar Uma Rota Nova" onPress={onInitRoute} />
     </Container>
   );

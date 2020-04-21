@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import MapView, {Marker} from 'react-native-maps';
 import {Image} from 'react-native';
 import {ROUTE_STATUS} from '~/utils/contants';
 
 export default function Map({location, route, status}) {
+  const isShowStops = useCallback(() => {
+    return status === ROUTE_STATUS.ACTIVED || route.stops.length > 0;
+  }, [route, status]);
+
   return (
     <MapView
       region={{
@@ -17,7 +21,9 @@ export default function Map({location, route, status}) {
       <Marker title="Sua posição atual" coordinate={location}>
         <Image source={require('~/assets/car.png')} style={{width: 20, height: 20}} />
       </Marker>
-      {status === ROUTE_STATUS.ACTIVED && (
+      {route.initialPosition && <Marker pinColor="#9f9" coordinate={route.initialPosition} />}
+      {route.finalPosition && <Marker coordinate={route.finalPosition} />}
+      {isShowStops() && (
         <>
           {route.stops.map((stop, index) => {
             return (
