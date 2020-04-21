@@ -1,24 +1,25 @@
-import React, {useEffect, useState, useCallback, useReducer, useRef} from 'react';
+import React, {useEffect, useState, useCallback, useRef} from 'react';
 
 import {Container, MapBox, ContainerInfo} from './styles';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import MapView, {Marker} from 'react-native-maps';
 import InitRoute from './InitRoute';
 
 import {fetchUserData} from '~/services/api';
 import {storeUserDataInStorage, getUserDataFromStorage} from '~/storage/user';
 import {getCurrentLocation, listenerUserPosition, stopPositionListener} from '~/utils/geolocation';
-import {ActivityIndicator, View, Text} from 'react-native';
+import {ActivityIndicator, View, Text, Image} from 'react-native';
 import {ROUTE_STATUS} from '~/utils/contants';
 import ActivedRoute from './ActivedRoute';
 import RouteResult from './RouteResult';
+import Map from './Map';
 
 export default function Main({navigation}) {
   const [user, setUser] = useState(null);
   const [currentLocation, setCurrentLocation] = useState(null);
+  const [route, setRoute] = useState({});
+  const [coordinates, setCoordinates] = useState([]);
   const [routeStatus, setRouteStatus] = useState(ROUTE_STATUS.DESACTIVED);
 
-  const watchId = useRef();
+  const listenerPositionId = useRef();
 
   useEffect(() => {
     async function getUserLocation() {
@@ -40,20 +41,31 @@ export default function Main({navigation}) {
   }, []);
 
   const startRoute = useCallback(async () => {
-    watchId.current = await listenerUserPosition(position => {
+    listenerPositionId.current = await listenerUserPosition(position => {
       console.log(position);
       setCurrentLocation(position);
+      setCoordinates(prevState => [...prevState, position]);
     });
+
+    const position = await getCurrentLocation();
+    setRoute({
+      id: Math.random(),
+      initialPosition: position,
+      stops: [],
+    });
+
     setRouteStatus(ROUTE_STATUS.ACTIVED);
   }, []);
 
   const cancelRoute = useCallback(() => {
-    stopPositionListener(watchId.current);
+    stopPositionListener(listenerPositionId.current);
     setRouteStatus(ROUTE_STATUS.DESACTIVED);
   }, []);
 
-  const finalizeRoute = useCallback(() => {
-    stopPositionListener(watchId.current);
+  const finalizeRoute = useCallback(finalPosition => {
+    console.tron('FINAL POSITION: ', finalPosition);
+    setRoute(prevState => ({...prevState, finalPosition}));
+    stopPositionListener(listenerPositionId.current);
     setRouteStatus(ROUTE_STATUS.FINALIZED);
   }, []);
 
@@ -61,15 +73,25 @@ export default function Main({navigation}) {
     setRouteStatus(ROUTE_STATUS.DESACTIVED);
   }, []);
 
+  const markStop = useCallback(stop => {
+    console.tron('STOP: ', stop);
+    setRoute(prevState => ({
+      ...prevState,
+      stops: [...prevState.stops, stop],
+    }));
+  }, []);
+
   const renderContent = useCallback(() => {
     if (routeStatus === ROUTE_STATUS.ACTIVED) {
-      return <ActivedRoute onCancelRoute={cancelRoute} onFinalizeRoute={finalizeRoute} />;
+      return (
+        <ActivedRoute route={route} onCancelRoute={cancelRoute} onFinalizeRoute={finalizeRoute} onMarkStop={markStop} />
+      );
     } else if (routeStatus === ROUTE_STATUS.DESACTIVED) {
       return <InitRoute onInitRoute={startRoute} />;
     } else {
       return <RouteResult onClose={closeResultRoute} />;
     }
-  }, [cancelRoute, closeResultRoute, finalizeRoute, routeStatus, startRoute]);
+  }, [cancelRoute, closeResultRoute, finalizeRoute, markStop, route, routeStatus, startRoute]);
 
   return (
     <Container>
@@ -78,22 +100,11 @@ export default function Main({navigation}) {
       </View>
       <MapBox>
         {currentLocation ? (
-          <MapView
-            region={{
-              latitude: currentLocation.latitude,
-              longitude: currentLocation.longitude,
-              latitudeDelta: 0.0102,
-              longitudeDelta: 0.0102,
-            }}
-            loadingEnabled={true}
-            style={{height: '100%', width: '100%'}}>
-            <Marker title="Sua posição atual" coordinate={currentLocation} />
-          </MapView>
+          <Map location={currentLocation} route={route} status={routeStatus} />
         ) : (
           <ActivityIndicator size={20} />
         )}
       </MapBox>
-
       {renderContent()}
     </Container>
   );
