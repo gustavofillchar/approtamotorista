@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {
   Info,
   Title,
@@ -12,8 +12,14 @@ import {
 } from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Separator} from '~/components/GlobalStyles';
+import {format} from 'date-fns';
+import {getTotalStudents} from '~/utils/route';
 
-export default function RouteResult({onClose}) {
+export default function RouteResult({route, onClose}) {
+  const totalStudents = useMemo(() => {
+    return getTotalStudents(route);
+  }, [route]);
+
   return (
     <ContainerInfo>
       <Info>
@@ -24,7 +30,7 @@ export default function RouteResult({onClose}) {
         <DescriptTitle>Início</DescriptTitle>
       </BoxTripDetail>
       <InfoBoxDescript>
-        <InfoDescriptText>11/09/2019 11:24:25</InfoDescriptText>
+        <InfoDescriptText>{format(route.initialTime, "HH'h' mm'm' ss's'")}</InfoDescriptText>
       </InfoBoxDescript>
 
       <BoxTripDetail>
@@ -32,16 +38,16 @@ export default function RouteResult({onClose}) {
         <DescriptTitle>Fim</DescriptTitle>
       </BoxTripDetail>
       <InfoBoxDescript>
-        <InfoDescriptText>11/09/2019 11:24:25</InfoDescriptText>
+        <InfoDescriptText>{format(route.finalTime, "HH'h' mm'm' ss's'")}</InfoDescriptText>
       </InfoBoxDescript>
 
-      <BoxTripDetail>
+      {/* <BoxTripDetail>
         <Icon name="map-marker-distance" size={25} color="#555" />
         <DescriptTitle>Distância Percorrida</DescriptTitle>
       </BoxTripDetail>
       <InfoBoxDescript>
         <InfoDescriptText>89 km</InfoDescriptText>
-      </InfoBoxDescript>
+      </InfoBoxDescript> */}
 
       <Separator />
       <BoxTripDetail>
@@ -49,10 +55,10 @@ export default function RouteResult({onClose}) {
         <DescriptTitle>Total de Alunos</DescriptTitle>
       </BoxTripDetail>
       <InfoBoxDescript>
-        <InfoDescriptText>16 alunos</InfoDescriptText>
+        <InfoDescriptText>{totalStudents} alunos</InfoDescriptText>
       </InfoBoxDescript>
 
-      <BoxTripDetail>
+      {/* <BoxTripDetail>
         <Icon name="bus-school" size={25} color="#555" />
         <DescriptTitle>Alunos Transportados</DescriptTitle>
       </BoxTripDetail>
@@ -66,6 +72,14 @@ export default function RouteResult({onClose}) {
       </BoxTripDetail>
       <InfoBoxDescript>
         <InfoDescriptText>6 alunos</InfoDescriptText>
+      </InfoBoxDescript> */}
+
+      <BoxTripDetail>
+        <Icon name="map-marker-check" size={25} color="#555" />
+        <DescriptTitle>Total de Paradas</DescriptTitle>
+      </BoxTripDetail>
+      <InfoBoxDescript>
+        <InfoDescriptText>{route.stops.length} paradas</InfoDescriptText>
       </InfoBoxDescript>
 
       <CloseBox onPress={onClose}>

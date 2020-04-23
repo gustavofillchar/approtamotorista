@@ -53,7 +53,7 @@ const Routes = createAppContainer(
           headerStyle: {
             backgroundColor: '#C10C19',
           },
-          headerTitle: 'Resumo da Viagem',
+          // headerTitle: 'Resumo da Viagem',
           headerTintColor: '#fff',
         },
       },

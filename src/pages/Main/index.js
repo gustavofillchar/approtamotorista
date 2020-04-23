@@ -41,6 +41,11 @@ export default function Main({navigation}) {
     getUserLocation();
   }, []);
 
+  useEffect(() => {
+    navigation.setParams({status: routeStatus});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [routeStatus]);
+
   const startRoute = useCallback(async () => {
     listenerPositionId.current = await listenerUserPosition(position => {
       console.log(position);
@@ -51,6 +56,7 @@ export default function Main({navigation}) {
     const position = await getCurrentLocation();
     setRoute({
       id: Math.random(),
+      initialTime: new Date(Date.now()),
       initialPosition: position,
       stops: [],
     });
@@ -61,14 +67,15 @@ export default function Main({navigation}) {
   const cancelRoute = useCallback(() => {
     stopPositionListener(listenerPositionId.current);
     setRouteStatus(ROUTE_STATUS.DESACTIVED);
+    setRoute({});
   }, []);
 
   const finalizeRoute = useCallback(
     async finalPosition => {
       console.tron('FINAL POSITION: ', finalPosition);
-      await storeRouteInStorage({...route, finalPosition});
+      await storeRouteInStorage({...route, finalPosition, finalTime: Date.now()});
       stopPositionListener(listenerPositionId.current);
-      setRoute(null);
+      setRoute({...route, finalPosition, finalTime: Date.now()});
       setRouteStatus(ROUTE_STATUS.FINALIZED);
     },
     [route],
@@ -76,10 +83,11 @@ export default function Main({navigation}) {
 
   const closeResultRoute = useCallback(() => {
     setRouteStatus(ROUTE_STATUS.DESACTIVED);
+    setRoute({});
   }, []);
 
   const markStop = useCallback(stop => {
-    console.tron('STOP: ', stop);
+    console.log('STOP: ', stop);
     setRoute(prevState => ({
       ...prevState,
       stops: [...prevState.stops, stop],
@@ -98,15 +106,12 @@ export default function Main({navigation}) {
     } else if (routeStatus === ROUTE_STATUS.DESACTIVED) {
       return <InitRoute onInitRoute={startRoute} onRouteSelect={handleRouteSelection} />;
     } else {
-      return <RouteResult onClose={closeResultRoute} />;
+      return <RouteResult route={route} onClose={closeResultRoute} />;
     }
-  }, [cancelRoute, closeResultRoute, finalizeRoute, markStop, route, routeStatus, startRoute]);
+  }, [cancelRoute, closeResultRoute, finalizeRoute, handleRouteSelection, markStop, route, routeStatus, startRoute]);
 
   return (
     <Container>
-      <View style={{padding: 10}}>
-        <Text>Olá {user?.driver?.name}!</Text>
-      </View>
       <MapBox>
         {currentLocation ? (
           <Map location={currentLocation} route={route} status={routeStatus} />
@@ -118,3 +123,17 @@ export default function Main({navigation}) {
     </Container>
   );
 }
+
+Main.navigationOptions = ({navigation}) => {
+  const status = navigation.getParam('status');
+  const title =
+    status === ROUTE_STATUS.ACTIVED
+      ? 'Gravando Rota'
+      : status === ROUTE_STATUS.DESACTIVED
+      ? 'Rotas'
+      : 'Resumo da Viagem';
+
+  return {
+    title,
+  };
+};

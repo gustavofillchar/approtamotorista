@@ -1,12 +1,16 @@
 import React, {useCallback} from 'react';
 import MapView, {Marker} from 'react-native-maps';
-import {Image} from 'react-native';
+import {Image, Dimensions} from 'react-native';
 import {ROUTE_STATUS} from '~/utils/contants';
 
 export default function Map({location, route, status}) {
   const isShowStops = useCallback(() => {
-    return status === ROUTE_STATUS.ACTIVED || route.stops.length > 0;
+    return status === ROUTE_STATUS.ACTIVED || route?.stops?.length > 0;
   }, [route, status]);
+
+  const getMapHeight = useCallback(() => {
+    return status === ROUTE_STATUS.ACTIVED ? Dimensions.get('window').height : '100%';
+  }, [status]);
 
   return (
     <MapView
@@ -17,7 +21,7 @@ export default function Map({location, route, status}) {
         longitudeDelta: 0.0102,
       }}
       loadingEnabled={true}
-      style={{height: '100%', width: '100%'}}>
+      style={{height: getMapHeight(), width: '100%'}}>
       <Marker title="Sua posição atual" coordinate={location}>
         <Image source={require('~/assets/car.png')} style={{width: 20, height: 20}} />
       </Marker>
