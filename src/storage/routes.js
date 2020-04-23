@@ -7,9 +7,7 @@ export async function getRoutesFromStorage() {
 
 export async function storeRouteInStorage(route) {
   const previousRoutes = JSON.parse(await AsyncStorage.getItem('routes')) || {};
-  console.tron('ROUTE: ', route);
   previousRoutes[route.id.toString()] = route;
-  console.tron('STOREROUTE: ', previousRoutes);
   await AsyncStorage.setItem('routes', JSON.stringify(previousRoutes));
 }
 

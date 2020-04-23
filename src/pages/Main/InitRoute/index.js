@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {Container} from './styles';
-import {Button, Text} from 'react-native';
+import {Container, FloatActionButton, Actions} from './styles';
 import {getRoutesFromStorage} from '~/storage/routes';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RoutesList from './RoutesList';
 
-export default function InitRoute({onInitRoute, onRouteSelect}) {
-  const [routes, setRoutes] = useState();
+export default function InitRoute({route, onInitRoute, onRouteSelect, onStartRoute}) {
+  const [routes, setRoutes] = useState(null);
 
   useEffect(() => {
     async function preparePreviousRoutes() {
@@ -16,8 +16,8 @@ export default function InitRoute({onInitRoute, onRouteSelect}) {
   }, []);
 
   const handleRoutePress = useCallback(
-    route => {
-      onRouteSelect(route);
+    routeSelected => {
+      onRouteSelect(routeSelected);
     },
     [onRouteSelect],
   );
@@ -25,7 +25,16 @@ export default function InitRoute({onInitRoute, onRouteSelect}) {
   return (
     <Container>
       <RoutesList routes={routes} onRoutePress={handleRoutePress} />
-      <Button title="Iniciar Uma Rota Nova" onPress={onInitRoute} />
+      <Actions>
+        <FloatActionButton onPress={onInitRoute} color="#3f51b5">
+          <Icon name="plus" size={25} color="#fff" />
+        </FloatActionButton>
+        {route?.initialTime && route?.finalTime && (
+          <FloatActionButton onPress={onStartRoute} color="#C10C19">
+            <Icon name="play" size={25} color="#fff" />
+          </FloatActionButton>
+        )}
+      </Actions>
     </Container>
   );
 }

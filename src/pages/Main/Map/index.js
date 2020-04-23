@@ -9,7 +9,9 @@ export default function Map({location, route, status}) {
   }, [route, status]);
 
   const getMapHeight = useCallback(() => {
-    return status === ROUTE_STATUS.ACTIVED ? Dimensions.get('window').height : '100%';
+    return status === ROUTE_STATUS.RECORDING || status === ROUTE_STATUS.ACTIVED
+      ? Dimensions.get('window').height
+      : '100%';
   }, [status]);
 
   return (
